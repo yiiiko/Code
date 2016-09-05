@@ -1,3 +1,4 @@
+
 //inspired by Sol LeWitt Wall Drawings
 //loop {((1-(1/16)))}
 size(320,360);
@@ -198,25 +199,26 @@ line(203, 233, 263, 233);
 
 
 //error command during the experiment:{
-1.
-mouseX, mouseY, error command with size() and line()
-size(640,360);
-line(100,50,600,250);
-mouseX;
-mouseY;
-  two commands above: (mouseX,Y) appear to be in red color, expected the line to move with the mouse
+//1.
+//mouseX, mouseY, error command with size() and line()
+//size(640,360);
+//line(100,50,600,250);
+//mouseX;
+//mouseY;
+//  two commands above: (mouseX,Y) appear to be in red color, expected the line to move with the mouse
 
 
-2.
-int = a;
-{
-a = a + 1;
+//2.
+//int = a;
+//{
+//a = a + 1;
 
-line(a, 188, a + 60, 188);
-line(a, 193, a + 60, 193);
-line(a, 198, a + 60, 198);
-}
-  appears to be error that does not work together with 2D primitives, can not be applied to line()
-}
+//line(a, 188, a + 60, 188);
+//line(a, 193, a + 60, 193);
+//line(a, 198, a + 60, 198);
+//}
+//  appears to be error that does not work together with 2D primitives, can not be applied to line()
+
 
 //after I succeed with other 2D primitives commond, I decied to imitate Sol LoWitt to produce a 16 steps gradient via varities in stroke weight.
+
