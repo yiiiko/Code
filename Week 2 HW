@@ -1,1 +1,71 @@
-skj
+float rotAngle = 45;
+//int w = 100;
+//int h = 100;
+//float r; 
+//float g;
+//float b; 
+
+
+//void setup() {
+//size(800,800);
+//background (255);
+//drawEllipse (circleX, circleY, radius, radius);
+//}
+
+//void draw() {
+////background(255);
+////first push
+//pushMatrix(); // remembers the translation / rotation beneath it.
+//translate(width/2, height/2);
+//rotate(radians(rotAngle+1));
+//rectMode(CENTER);
+//r = map(mouseX, 0, width, 145, 240);
+//g = map(mouseY, 0, width, 222, 196);
+//b = map(mouseX, 0, width, 220, 36);
+
+//stroke (r, g, b);
+//line(0,0,w,h);
+
+//rotAngle+=1; 
+////second push
+//pushMatrix();
+//translate(200, 0);
+//rotate(radians(rotAngle*2));
+////rectMode(CORNER);
+//rect(0, 0, 5, 5);
+////first pop
+//popMatrix();
+////second pop
+//popMatrix();
+void setup(){
+  size(500,500);
+}
+
+//void draw(){
+//  background(255);
+//  drawface();
+//}
+
+//void drawface() {
+//  rotateX(PI/3.0);
+//  fill(155, 255, 200);
+//  ellipse (250, 250, 100, 100);
+//  fill(100, 100, 100);
+//  ellipse (230, 240, 10, 10);
+//  ellipse (260, 240, 10, 10);
+  
+//  fill(245, 0, 0);
+//  triangle (245, 230, 235, 260, 260, 260);
+//  translate(200, 0);
+void draw() {
+ 
+translate(width/2, height/2);
+rotate(PI/3.0);
+rotate(radians(rotAngle+1));
+rect(-26, -26, 52, 52);
+}
+
+////rectMode(CORNER);
+
+
+
