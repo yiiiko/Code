@@ -1,0 +1,23 @@
+void setup(){
+  size(400, 300);
+  background (245);
+}
+
+void draw(){
+
+  
+  if (mouseX > 100){
+  background( 252, 233, 18);
+  }
+  if (mouseX > 300){
+   
+  background( 150, 230, 245);
+  ellipse( 10, 10, 10, 10);
+  noStroke();
+  fill( 255, 245, 130);
+  }
+  line ( 300, 0, 300, 400);
+  line ( 100, 0, 100, 400);{
+  //stroke (255); try to make this command not apply to the ellipse
+  strokeWeight (3);
+}}
