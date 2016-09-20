@@ -1,23 +1,95 @@
-void setup(){
-  size(400, 300);
-  background (245);
-}
+boolean going = true;
 
+int x = 10;
+int value = 10;
+
+void setup(){
+  size(500, 500);
+  background (245);
+ 
+  
+  fill( 140, 232, 240); //1
+  noStroke();
+  rect( 50, 50, 100, 100);
+  rect( 150, 150, 100, 100);
+  rect( 250, 250, 100, 100);
+  rect( 350, 350, 100, 100);
+  
+  fill( 189, 234, 225); //2
+  
+  rect( 150, 50, 100, 100);
+  rect( 250, 150, 100, 100);
+  rect( 350, 250, 100, 100);
+  
+  fill( 140, 207, 232); //3
+  rect( 50, 150, 100, 100);
+  rect( 150, 250, 100, 100);
+  rect( 250, 350, 100, 100);
+  
+  fill( 140, 193, 232); //4
+  rect( 50, 250, 100, 100);
+  rect( 150, 350, 100, 100);
+  
+  fill( 140, 176, 232); //5
+  rect( 50, 350, 100, 100);
+  
+  fill( 200, 232, 140); //6
+  
+  
+
+  
+}
 void draw(){
 
   
-  if (mouseX > 100){
-  background( 252, 233, 18);
-  }
-  if (mouseX > 300){
+  //if (mouseX > 100){
+  //  ellipse()
+  //}
+
+////  //if (mouseX > 300){
+    
    
-  background( 150, 230, 245);
-  ellipse( 10, 10, 10, 10);
+  
+  ellipse( x, mouseY, 10, 10);
+  noFill ();
+  
+  if (going) {
+    x = x + 1;
+  }
+  if ( x > 499) {
+    going = false;
+    x = x - 10;
+  }
+  
   noStroke();
   fill( 255, 245, 130);
-  }
-  line ( 300, 0, 300, 400);
-  line ( 100, 0, 100, 400);{
-  //stroke (255); try to make this command not apply to the ellipse
+ 
+
+  //stroke (255);
   strokeWeight (3);
-}}
+}
+
+
+
+void mousePressed() {
+  if (going == true) {
+    going = false;
+  } else {
+    going = true;
+  }
+}
+void mouseDragged(){
+  if ( going == true) {
+    going = false;
+  } else {
+    going = true;
+}
+}
+  
+//void keyPressed() {
+//  if (value == 0) {
+//    value = 255;
+//  } else {
+//    value = 0;
+//  }
+//}
