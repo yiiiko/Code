@@ -1,13 +1,26 @@
-boolean going = true;
+//try to draw this following imagine
+//mousePresse to reset
 
-int x = 10;
-int value = 10;
+boolean going = true;
+float x = 0;
+float xSpeed = 5;
+
+
 
 void setup(){
   size(500, 500);
   background (245);
- 
+}
   
+ void sq(){
+  rect(50, 50, 400, 400);
+  fill (0);// the color is not black for some reason
+}
+
+  
+
+void draw(){
+  sq();
   fill( 140, 232, 240); //1
   noStroke();
   rect( 50, 50, 100, 100);
@@ -34,13 +47,12 @@ void setup(){
   rect( 50, 350, 100, 100);
   
   fill( 200, 232, 140); //6
+  // after i put function sq behind these rect, why is there a black line?
   
-  
+ 
 
   
-}
-void draw(){
-
+  
   
   //if (mouseX > 100){
   //  ellipse()
@@ -51,22 +63,21 @@ void draw(){
    
   
   ellipse( x, mouseY, 10, 10);
-  noFill ();
+  //noFill ();
+  x += xSpeed;
   
-  if (going) {
-    x = x + 1;
-  }
-  if ( x > 499) {
-    going = false;
-    x = x - 10;
-  }
+  //if (going) {
+  //  x = x + 2;
+  //}
+  if ( x > width || x < 0 ) { 
+    xSpeed = xSpeed * -1;
+    //going = false;
+    //x = x * -1; // the ball doesn't bounce off from (width, mouseY), so i have to go with this reset x to zero mode
+  }//jk now it bounce off
   
   noStroke();
-  fill( 255, 245, 130);
+  fill( 255, 150, 150);//pink
  
-
-  //stroke (255);
-  strokeWeight (3);
 }
 
 
@@ -76,6 +87,7 @@ void mousePressed() {
     going = false;
   } else {
     going = true;
+    background (0);
   }
 }
 void mouseDragged(){
@@ -84,6 +96,9 @@ void mouseDragged(){
   } else {
     going = true;
 }
+  if (mouseX >= width - 50 );{
+  background(0);
+  }
 }
   
 //void keyPressed() {
