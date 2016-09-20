@@ -1,4 +1,4 @@
-//try to draw this following imagine
+//try to draw five green lines align with the horizontal lines of the squares
 //mousePresse to reset
 
 boolean going = true;
