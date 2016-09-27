@@ -1,9 +1,13 @@
 //still in process...
+//pseudocode
+//two bottons on the screen
+//change to different background color when pressed
+
 int circleX, circleY;  
-int rectSize = 90;     
+     
 int circleSize = 93;   
-color rectColor, circleColor, baseColor;
-color rectHighlight, circleHighlight;
+color circleColor1, circleColor2, baseColor;
+color circleHighlight1, circleHighlight2;
 color currentColor;
 boolean circle1 = false;
 boolean circle2 = false;
@@ -17,16 +21,14 @@ float speedY;
 
 void setup() {
   size(640, 640);
-  rectColor = color(0);
-  rectHighlight = color(51);
-  circleColor = color(255);
-  circleHighlight = color(204);
-  baseColor = color(102, 155, 167);
+  circleColor1 = color(255);
+  circleHighlight1 = color(204);
+  baseColor = color(250, 206, 45);
   currentColor = baseColor;
   circleX = width/2+circleSize/2+10;
   circleY = height/2;
-  circleX = width/2-rectSize-10;
-  circleY = height/2-rectSize/2;
+  circleX = width/2-circleSize-10;
+  circleY = height/2-circleSize/2;
   ellipseMode(CENTER);
   
   ballX = width/2;
@@ -67,9 +69,9 @@ void draw() {
   ellipse(circleX + 100, circleY, circleSize, circleSize);
   
   if (circle2) {
-    fill(circleHighlight);
+    fill(circleHighlight1);
   } else {
-    fill(circleColor);
+    fill(circleColor1);
   }
   stroke(0);
   ellipse(circleX, circleY, circleSize, circleSize);
@@ -83,7 +85,16 @@ void update(int x, int y) {
   if ( overCircle(circleX, circleY, circleSize) ) {
     circle2 = true;
     circle1 = false;
-  } else if ( overcircle1 (circleX + 10, circleY + 10, circleSize, circleSize) ) {
+  } else if ( overCircle (circleX + 10, circleY + 10, circleSize) ) {
+    circle1 = true;
+    circle2 = false;
+  } else {
+    circle2 = circle1 = false;
+  }
+  if ( overCircle(circleX, circleY, circleSize) ) {
+    circle2 = true;
+    circle1 = false;
+  } else if ( overCircle (circleX + 10, circleY + 10, circleSize) ) {
     circle1 = true;
     circle2 = false;
   } else {
@@ -93,21 +104,14 @@ void update(int x, int y) {
 
 void mousePressed() {
   if (circle2) {
-    currentColor = circleColor;
+    currentColor = circleColor1;
   }
   if (circle1) {
-    currentColor = rectColor;
+    currentColor = circleColor2;
   }
 }
 
-boolean overcircle1(int x, int y, int width, int height)  {
-  if (mouseX >= x && mouseX <= x+width && 
-      mouseY >= y && mouseY <= y+height) {
-    return true;
-  } else {
-    return false;
-  }
-}
+
 
 boolean overCircle(int x, int y, int diameter) {
   float disX = x - mouseX;
