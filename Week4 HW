@@ -1,4 +1,5 @@
 //still in process...
+//bottons are not working well...
 //pseudocode
 //two bottons on the screen
 //change to different background color when pressed
@@ -21,7 +22,7 @@ float speedY;
 
 void setup() {
   size(640, 640);
-  circleColor1 = color(255);
+  circleColor1 = color(255, 215, 50);
   circleHighlight1 = color(204);
   baseColor = color(250, 206, 45);
   currentColor = baseColor;
@@ -61,15 +62,17 @@ void draw() {
     speedY = -speedY;
   }
   
-  
-  
-  
-  
   ellipse(circleX, circleY, circleSize, circleSize);
-  ellipse(circleX + 100, circleY, circleSize, circleSize);
+  ellipse(circleX + 100, circleY, circleSize, circleSize);// why is this circle changing color..
+
   
   if (circle2) {
     fill(circleHighlight1);
+  } else {
+    fill(circleColor1);
+  }
+  if (circle2) {
+    fill(circleHighlight2);
   } else {
     fill(circleColor1);
   }
@@ -104,14 +107,13 @@ void update(int x, int y) {
 
 void mousePressed() {
   if (circle2) {
-    currentColor = circleColor1;
+    currentColor = mouseX - currentColor;
   }
   if (circle1) {
-    currentColor = circleColor2;
+    currentColor = mouseY - currentColor;//second botton doesn't work at the moment hmm...
   }
+
 }
-
-
 
 boolean overCircle(int x, int y, int diameter) {
   float disX = x - mouseX;
