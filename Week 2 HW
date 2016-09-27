@@ -1,3 +1,4 @@
+//
 float rotAngle = 45;
 int w = 100;
 int h = 100;
@@ -21,6 +22,20 @@ rectMode(CENTER);
 r = map(mouseX, 0, width, 145, 240);
 g = map(mouseY, 0, width, 222, 196);
 b = map(mouseX, 0, width, 220, 36);
+drawFace();
+}
+
+void drawFace(){
+  rotateX(PI/3.0);
+  fill(155, 255, 200);
+  ellipse (250, 250, 100, 100);
+  fill(100, 100, 100);
+  ellipse (230, 240, 10, 10);
+  ellipse (260, 240, 10, 10);
+  
+  fill(245, 0, 0);
+  triangle (245, 230, 235, 260, 260, 260);
+  translate(200, 0);
 
 stroke (r, g, b);
 line(0,0,w,h);
@@ -36,28 +51,4 @@ rect(0, 0, 5, 5);
 popMatrix();
 //second pop
 popMatrix();
-
-
-//void drawEllipse (circleX, circleY, radius, radius);
-ellipse(mouseX, mouseY, 100, 100);
-noFill ();
-
 }
-
-
-
-
-
-//part two
-//void drawface() {
-//  rotateX(PI/3.0);
-//  fill(155, 255, 200);
-//  ellipse (250, 250, 100, 100);
-//  fill(100, 100, 100);
-//  ellipse (230, 240, 10, 10);
-//  ellipse (260, 240, 10, 10);
-  
-//  fill(245, 0, 0);
-//  triangle (245, 230, 235, 260, 260, 260);
-//  translate(200, 0);
-//function part where i can't get it with the rotation
