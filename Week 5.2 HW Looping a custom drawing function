@@ -1,0 +1,31 @@
+//2 - Looping a custom drawing function
+
+//Write a custom function that draws something unique to the screen. (remember drawRobot()? It could be a face, a shape, a combination of shapes and text, whatever)
+//Make sure that it has arguments so that you can change the position.
+//Use a for loop to call your custom function multiple times to draw your object in different places on the screen. Make sure that you feed in a position value.
+//teehee diagram
+float i = random (250);
+
+void setup(){
+size(500,500);
+
+}
+
+
+
+void draw(){
+  background(i++);
+  if (i>249){
+    i = 250 -i;
+  }
+  teehee(width/2, height/2, 200, 4);
+  
+}
+
+void teehee(float a, float b, int size, int num){
+  fill(a);
+  for (int i =1; i< num; i ++){
+  
+  ellipse(a+i, b+i, size - i -mouseX, size- mouseY);
+  }
+}
