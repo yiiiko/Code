@@ -1,0 +1,24 @@
+//3 - Nested (2D) loops
+
+//Use a nested loop to draw a grid of elements to the screen.
+//Use map() and dist() to relate the elements to the relative position of the mouse or some other variable that you are tracking. Does the color change based on the mouse position? Does each shape rotate based on the mouse position? (use the example code to start) 
+//Use this blog for inspiration: http://obsessedbythegrid.tumblr.com/ (Links to an external site.)
+
+void setup() {
+  size (700, 700);
+  
+}
+
+void draw() {
+  background (255);
+
+  for (int i = 0; i <= width; i += width/35) {
+    for (int j = 0; j <= height; j += height/35) {  
+      fill(map(mouseX, mouseY,width, 50, 150)) ;
+      stroke (dist(mouseX, mouseY, 50, 150));
+      rect(10*j,10*i,100,100);
+    }
+  }
+ 
+}
+  
