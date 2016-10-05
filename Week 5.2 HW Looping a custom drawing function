@@ -11,17 +11,6 @@ size(500,500);
 
 }
 
-
-
-void draw(){
-  background(i++);
-  if (i>249){
-    i = 250 -i;
-  }
-  teehee(width/2, height/2, 200, 4);
-  
-}
-
 void teehee(float a, float b, int size, int num){
   fill(a);
   for (int i =1; i< num; i ++){
@@ -29,3 +18,14 @@ void teehee(float a, float b, int size, int num){
   ellipse(a+i, b+i, size - i -mouseX, size- mouseY);
   }
 }
+
+void draw(){
+  background(i++);
+  if (i>249){
+    i = 250 -i;}
+  
+  for (int i = 0; i < 10; i++) {
+   teehee(i*100, height/2, 200, 4);
+  } 
+}
+
